@@ -1,4 +1,5 @@
-const todoList = [];
+const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
+
 
 function renderTodoList() {
   let todoListHTML = '';
@@ -14,7 +15,7 @@ function renderTodoList() {
             todoList.splice(${i}, 1);
             renderTodoList();"
             class="delete-css"
-        >Done</button>
+        >Delete</button>
         `;
     todoListHTML += html;
   }
@@ -29,13 +30,17 @@ function addTodo() {
   const dueTimeElement = document.querySelector('.js-time-input');
   const dueTime = dueTimeElement.value;
 
-  todoList.push({
-    name,
-    dueTime
-  });
+  if(name && dueTime)//Ensures there is no addition of empty todo 
+  { todoList.push({ name, dueTime})
+      saveTodoList(); 
+      renderTodoList();}
 
   inputElement.value = '';
   dueTimeElement.value = ''; 
 
   renderTodoList();
 }
+function saveTodoList (){
+  localStorage.setItem('todoList',JSON.stringify(todoList));
+}
+renderTodoList();
