@@ -1,0 +1,43 @@
+body {
+    font-family: Arial;
+
+}
+
+.Todo-grid,
+ .input-time-add {
+    display : grid;
+    grid-template-columns: 150px 150px 75px;
+    column-gap: 15px;
+    row-gap: 10px;
+    align-items: center;
+
+}
+ .input-time-add {
+    margin-bottom: 10px;
+
+ 
+ }
+ 
+
+ .input-css {
+    padding :5px ;
+    font-size: 15px;
+    
+ }
+ .add-css {
+    background-color: green;
+    color: white;
+    border: none;
+    padding:8px;
+    
+ }
+ .delete-css {
+    background-color: darkred;
+    color:white;
+    border:none;
+    padding:8px;
+
+ }
+ .time-css{
+    padding: 4px;
+ }
