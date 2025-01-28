@@ -14,7 +14,7 @@ function renderTodoList() {
             todoList.splice(${i}, 1);
             renderTodoList();"
             class="delete-css"
-        >Delete</button>
+        >Done</button>
         `;
     todoListHTML += html;
   }
